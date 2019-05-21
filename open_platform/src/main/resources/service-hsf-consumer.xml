@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:hsf="http://www.taobao.com/hsf"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context  
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+       http://www.taobao.com/hsf
+       http://www.taobao.com/hsf/hsf.xsd" default-autowire="byName"> 
+       
+    <!-- Annotation Scan -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.kd,org.jeecgframework"/>
+
+    <!-- 消费服务 -->
+	<hsf:consumer id="sysManageService" interface="sunbox.core.hsf.api.SysManageService"
+				  version="4.0.0" group="kd" clientTimeout="600000">
+	</hsf:consumer>
+
+	<hsf:consumer id="sysSupportApiService" interface="sunbox.gateway.api.service.system.SysSupportApiService"
+				  version="1.1.1" group="ddqc" clientTimeout="600000">
+	</hsf:consumer>
+
+	<hsf:consumer id="sysTokenApiService" interface="sunbox.gateway.api.service.system.SysTokenApiService"
+				  version="1.1.1" group="ddqc" clientTimeout="50000">
+	</hsf:consumer>
+
+	<hsf:consumer id="hsfdataServer" interface="com.kd.openplatform.activeAPI.OpenplatformAPI"
+				  version="12.2.3" group="openplatformHSF" clientTimeout="50000">
+	</hsf:consumer>
+
+	<hsf:consumer id="hsfMqServer" interface="com.kd.openplatform.activeAPI.OpenplatformMqApi"
+				  version="1.0.0" group="openplatformHSF" clientTimeout="50000">
+	</hsf:consumer>
+
+	<hsf:consumer id="openPlatformWebSupportService" interface="com.sgcc.hlht.service.OpenPlatformWebSupportService"
+				  version="4.0.1"
+				  group="grp_hlht_web" clientTimeout="600000">
+	</hsf:consumer>
+
+    
+</beans>

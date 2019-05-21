@@ -1,0 +1,96 @@
+body {
+    padding-top:70px;
+}
+/* .carousel {
+    height:500px;
+    background-color: #000;
+}
+.carousel .item {
+    height:500px;
+    background-color:#000;
+}
+.carousel img {
+    width:100%;
+}
+@media (min-width: 992px){
+    .feature-heading {
+        margin-top:120px;
+    }
+}
+.feature {
+    padding:30px 0;
+}
+.feature-heading {
+    font-size:50px;
+    color:#2a6496;
+}
+.feature-heading .text-muted {
+    font-size:28px;
+}
+.summary {
+    padding-right: 15px;
+    padding-left: 15px;
+} */
+/*首页头信息 */
+.header-logo{
+	background: url(../images/logo.png) no-repeat;
+    padding-left: 58px;
+    height: 65px;
+    margin-top: 6px;
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.3;
+    display: inline-block;
+    vertical-align: top;
+}
+.header-title li{
+	display: inline-block;
+    padding: 0 15px;
+}
+.header-title li a{
+	color: #838383;
+}
+.header-title a.active{
+	color: #fff;
+    border-bottom: 4px solid #1258fa;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+.header-title .dropdown-menu{
+	width:70px;
+}
+.docs-list ul{
+	display:none;
+	position: absolute;
+    left: 679.6px;
+    top: 46px;
+    z-index: 1001;
+    
+    border: 1px solid #ddd;
+    padding: 10px 0px;
+    margin: 0;
+    min-width: 100px;
+    font-family: Arial;
+    box-shadow: 1px 2px 15px rgba(249, 245, 245, 0.4);
+    width: 110px;
+    background: #ffffff;
+    border: 0;
+    color: #000;
+    border-radius: 5px;
+}
+.docs-list ul li{
+	list-style: none;
+    line-height: 30px;
+    padding: 0px 0px;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align:center;
+}
+.docs-list ul li:hover{
+	color:#ffffff;
+	background-color:blue;	
+}

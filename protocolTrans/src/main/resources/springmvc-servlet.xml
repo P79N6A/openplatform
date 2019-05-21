@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd  ">
+
+    <!-- scan the package and the sub package -->
+    <context:component-scan base-package="com.kd.*"/>
+    <!--aop配置-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!-- don't handle the static resource -->
+    <mvc:default-servlet-handler />
+
+    <!-- if you use annotation you must configure following setting -->
+    <mvc:annotation-driven />
+<!--      <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven> -->
+    <!-- configure the InternalResourceViewResolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+            id="internalResourceViewResolver">
+        <!-- 前缀 -->
+        <property name="prefix" value="*" />
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp" />
+    </bean>
+</beans>

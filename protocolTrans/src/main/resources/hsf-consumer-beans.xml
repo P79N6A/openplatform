@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:hsf="http://www.taobao.com/hsf"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	       http://www.taobao.com/hsf
+	       http://www.taobao.com/hsf/hsf.xsd" 
+       default-autowire="byName"> 
+    <!-- 消费一个服务示例 -->
+
+      <hsf:consumer id="serviceCom"
+      	interface="serviceCom.DataCom"
+        version="2.0.0"
+        group="dataServerHSFCom"
+    	clientTimeout="500000">
+    </hsf:consumer>
+
+    <hsf:consumer id="sysTokenApiService"
+                  interface="sunbox.gateway.api.service.system.SysTokenApiService"
+                  version="1.1.1"
+                  group="ddqc"
+                  clientTimeout="500000">
+    </hsf:consumer>
+
+    <hsf:consumer id="openPlatformSupportService"
+                  interface="com.sgcc.hlht.service.OpenPlatformSupportService"
+                  version="4.0.0"
+                  group="grp_hlht_consumer"
+                  clientTimeout="500000">
+    </hsf:consumer>
+
+    <hsf:consumer id="MerchManageService"
+                  interface="com.sgcc.hlht.service.MerchManageService"
+                  version="4.0.0"
+                  group="grp_hlht_consumer"
+                  clientTimeout="500000">
+    </hsf:consumer>
+</beans>

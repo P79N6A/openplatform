@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kd.nvoap.dao.IAPIInfoDao" >
+  <resultMap id="BaseResultMap" type="com.kd.nvoap.model.ApiInfo" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="api_name" property="apiName" jdbcType="VARCHAR" />
+    <result column="api_desc" property="apiDesc" jdbcType="LONGVARCHAR" />
+    <result column="api_status" property="apiStatus" jdbcType="INTEGER" />
+    <result column="req_addr_hsf" property="reqAddrHsf" jdbcType="VARCHAR" />
+    <result column="req_addr_http" property="reqAddrHttp" jdbcType="VARCHAR" />
+    <result column="group_id" property="groupId" jdbcType="VARCHAR" />
+    <result column="exam_data" property="examData" jdbcType="LONGVARCHAR" />
+    <result column="create_name" property="createName" jdbcType="VARCHAR" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_name" property="updateName" jdbcType="VARCHAR" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="api_class_name" property="apiClassName" jdbcType="VARCHAR" />
+    <result column="api_method_name" property="apiMethodName" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="VARCHAR" />
+    <result column="hsf_group" property="hsfGroup" jdbcType="VARCHAR" />
+    <result column="pub_mode" property="pubMode" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, api_name, api_desc,api_status,req_addr_hsf,req_addr_http,group_id,exam_data,create_name,create_by,api_class_name,api_method_name,version,hsf_group,pub_mode
+  </sql>
+  <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from api_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="getByGroupId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from api_info
+    where group_id = #{groupId,jdbcType=VARCHAR} and api_visible_status=1
+  </select>
+  
+   <select id="getInfoByParam" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from api_info
+    where api_name like concat('%',#{apiName,jdbcType=VARCHAR},'%') and api_visible_status=1
+  </select>
+  
+  
+  
+  
+  
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_t
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kd.nvoap.model.User" >
+    insert into user_t (id, user_name, password, 
+      age)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.kd.nvoap.model.User" >
+    insert into user_t
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kd.nvoap.model.User" >
+    update user_t
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kd.nvoap.model.User" >
+    update user_t
+    set user_name = #{userName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

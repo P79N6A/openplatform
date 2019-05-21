@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<properties>  
+    <property> 
+        <id>width</id>  
+        <title>宽：</title>  
+        <value1>345</value1> 
+    </property>  
+    <property> 
+        <id>height</id>  
+        <title>高</title>  
+        <value>123</value> 
+    </property> 
+	
+	 <property> 
+        <id>marginTop</id>  
+        <title>距上边距：</title>  
+        <value1>345</value1> 
+    </property>  
+    <property> 
+        <id>marginLeft</id>  
+        <title>距左边距：</title>  
+        <value>20</value> 
+    </property> 
+	
+	 <property> 
+        <id>marginBottom</id>  
+        <title>距下边距：</title>  
+        <value1>345</value1> 
+    </property>  
+    <property> 
+        <id>marginRight</id>  
+        <title>距右边距：</title>  
+        <value>30</value> 
+    </property> 
+</properties>

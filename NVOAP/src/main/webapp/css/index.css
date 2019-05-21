@@ -1,0 +1,219 @@
+body {
+    padding-top:70px;
+}
+.carousel {
+    height:500px;
+    background-color: #000;
+}
+.carousel .item {
+    height:500px;
+    background-color:#000;
+}
+.carousel img {
+    width:100%;
+}
+@media (min-width: 992px){
+    .feature-heading {
+        margin-top:120px;
+    }
+}
+.feature {
+    padding:30px 0;
+}
+.feature-heading {
+    font-size:50px;
+    color:#2a6496;
+}
+.feature-heading .text-muted {
+    font-size:28px;
+}
+.summary {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+/*首页滚动图片*/
+.carousel-caption ul{
+	width: 320px;
+    /* padding-top: 55px; */
+    margin-left:auto;
+    margin-right:auto;
+}
+.carousel-caption ul li{
+	display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    color: #fff;
+    margin-top: 25px;
+    padding-left: 10px;
+    position: relative;
+    text-align:left	;
+}
+.carousel-caption ul li:before{
+	content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+/*业务场景样式*/
+.main-content{
+    background: #f7f7f7 url(https://img.alicdn.com/tfs/TB150GHf5qAXuNjy1XdXXaYcVXa-1504-721.png) right bottom no-repeat;
+    padding-bottom: 130px;
+    min-width: 1200px;
+}
+.business {
+	height:600px;
+	background:#f7f7f7 url(https://img.alicdn.com/tfs/TB1.kFpivDH8KJjy1XcXXcpdXXa-2000-674.jpg) no-repeat;
+	position: relative;
+	margin-bottom: 30px;
+	padding-top: 20px;
+}
+.business,.develop h1,h2,h3,h4,h5,h6{
+	text-align:center;
+}
+.business,.develop h5{
+	color:gray;
+}
+.develop,.success {
+	height:600px;
+	position: relative;
+	margin-bottom: 30px;
+	padding-top: 20px;
+}
+.success{
+	 background: #f7f7f7 url(https://img.alicdn.com/tfs/TB150GHf5qAXuNjy1XdXXaYcVXa-1504-721.png) right bottom no-repeat;
+	 margin-bottom:0px;
+}
+.develop .develop-main{
+	width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.develop .develop-bg{
+    margin: 0;
+    font-size: 72px;
+    color: #eee;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-family: Helvetica;
+    height: 62px;
+    overflow: hidden;
+}
+.develop h1{
+	margin-top:-32px;
+}
+.develop a:visited{
+	color:#0073bd
+}
+.develop a:link{
+	color:#2192D9
+}
+.develop a.develop-item{
+    display: inline-block;
+    vertical-align: top;
+    width: 285px;
+    margin-right: 20px;
+    margin-left:40px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 4px 4px 5px rgba(0,0,0,.12);
+    margin-top: 20px;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 20px 0;
+    transition: background ease .3s 0s;
+}
+.develop .develop-item .iconfont{
+	color: #198cff;
+    transition: color ease .3s 0s;
+    
+    /* font-family: iconfont; */
+    display: inline-block;
+    font-style: normal;
+    font-size: 36px;
+}
+.develop .develop-item i{
+	color:blue;
+}
+.develop .develop-item p{
+	color:#000000;
+}
+.success .success-main{
+	width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.success .success-bg{
+    margin: 0;
+    font-size: 72px;
+    color: #eee;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-family: Helvetica;
+    height: 62px;
+    overflow: hidden;
+}
+.success-main-text p,h2{
+	text-align: left;
+}
+.success-main-text h2{
+	margin-top:-32px;
+	padding-left: 20px;
+	font-size: 30px;
+}
+.success-main-text p{
+	color: #7c7c7c;
+    padding-left: 20px;
+}
+.success-main-text em {
+	font-size: 48px;
+    font-weight: 700;
+    font-style: normal;
+    color: #444;
+    vertical-align: middle;
+}
+.success-main-item {
+	position: absolute;
+    top: 40px;
+    right: 0;
+}
+.success-item {
+	display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    height: 409px;
+    margin-right: 35px;
+    background: url(https://img.alicdn.com/tfs/TB1xBM_ihrI8KJjy0FpXXb5hVXa-251-409.png);
+    padding: 20px;
+}
+.success-item-image{
+	border-radius: 100px;
+    padding: 10px;
+    display: inline-block;
+    background: #fff;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.12);
+    margin-top: -80px;
+    margin-left: 35px;
+}
+.success-item-image img {
+	display: block;
+    border-radius: 100px;
+}
+.success-item h3{
+    background: url(https://img.alicdn.com/tfs/TB1Nn0Bir_I8KJjy1XaXXbsxpXa-243-72.png) no-repeat;
+    color: #fff;
+    height: 62px;
+    margin-left: -30px;
+    padding: 10px 40px;
+    width: 247px;
+}
+.success-item p {
+	color: #fff;
+    height: 180px;
+}

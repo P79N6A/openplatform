@@ -1,0 +1,162 @@
+$(document).ready(function(){
+	 //1.初始化Table
+	TableInit();
+    //2.初始化Button的点击事件
+	//查询按钮
+	$("#btn_query").bind("click",function(){
+		refreshTable();
+	})
+	//重置按钮
+	$("#reset-btn").bind("click",function(){
+		
+		$('#searchForm').get(0).reset();
+		refreshTable();
+	})
+})
+
+function TableInit() {
+	$('#approvalUsers').bootstrapTable({
+        url: 'check.do?getapprovalUserList',         //请求后台的URL（*）
+        method: 'post',                      //请求方式（*）
+        contentType: "application/x-www-form-urlencoded",
+        toolbar: '#toolbar',                //工具按钮用哪个容器
+        striped: true,                      //是否显示行间隔色
+        cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+        pagination: true,                   //是否显示分页（*）
+        sortable: false,                     //是否启用排序
+        sortOrder: "asc",                   //排序方式
+        queryParams: function (params){//传递参数（*）
+        	return {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                limit: params.pageSize,   //页面大小
+                offset: params.pageNumber,  //页码
+                userName:$("#userName").val(),
+            };
+        },
+        queryParamsType:"page",
+        sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+        pageNumber:1,                       //初始化加载第一页，默认第一页
+        pageSize: 10,                       //每页的记录行数（*）
+        pageList: [10, 20, 50, 100],        //可供选择的每页的行数（*）
+        strictSearch: true,
+        showColumns: false,                  //是否显示所有的列
+        showRefresh: false,                  //是否显示刷新按钮
+        minimumCountColumns: 2,             //最少允许的列数
+        clickToSelect: true,                //是否启用点击选中行
+//        height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+        uniqueId: "id",                     //每一行的唯一标识，一般为主键列
+        showToggle:false,                    //是否显示详细视图和列表视图的切换按钮
+        cardView: false,                    //是否显示详细视图
+        detailView: false,                   //是否显示父子表
+        searchOnEnterKey:false,
+        columns: [{  
+            field: 'Number',  
+            formatter: function (value, row, index) {  
+            	return index+1;  
+            },
+            width:"2%",
+        },{
+            field: 'userName',
+            title: '用户账号',
+            width:'10%'
+        },{
+            field: 'realName',
+            title: '用户名称',
+            width:'10%'
+        },{
+            field: 'userKey',
+            title: '角色名称',
+            width:'10%'
+        },{
+            field: 'status',
+            title: '用户状态',
+            width:'6%',
+            formatter:function(status,row,index){
+            	if(status == "1"){
+            		return "激活";
+            	}else if(status == "2"){
+            		return "删除";
+            	}else if(status == "3"){
+            		return "新建";
+            	}else if(status == "4"){
+            		return "编辑";
+            	}
+            }
+        },{
+            field: 'checkStatus',
+            title: '审核状态',
+            width:'8%',
+            formatter:function(checkStatus,row,index){
+            	if(checkStatus == "1"){
+            		return "待审核";
+            	}else if(checkStatus == "2"){
+            		return "审核通过";
+            	} else if (checkStatus == "3"){
+            		return "审核未通过";
+            	}
+            }
+        },{
+            field: 'registerType',
+            title: '用户来源',
+            formatter:function(value,row,index){
+                if(value == null || value == "" || value == "00"){
+                    return "能力开放平台";
+                }else if(value == "01"){
+                    return "车联网";
+                }else if(value == "02"){
+                    return "智慧能源";
+                }
+                return value;
+            },
+            width:"8%"
+        },{
+        	field:"action",
+        	title:"操作",
+        	width:'5%',
+        	formatter:function(value,row,index){
+        		return "<button class='btn btn-xs btn-success' style='margin-right:5px' title='审核' onclick='approvalUser(\"" + row.id + "\",\"" + row.state + "\")'><span class='glyphicon glyphicon-wrench'></span></button>"
+        	}
+        } ],
+        onClickRow:function(row,$element,field){
+        	$element.parent().find("tr").removeClass("click-tr-bg");
+			$element.addClass("click-tr-bg");
+        }
+    });
+ 	
+};
+
+function refreshTable(){
+	$('#approvalUsers').bootstrapTable("refresh");
+}
+
+function approvalUser(id, state){
+		var dialog = new BootstrapDialog({
+	        title: '审核用户',
+	        type:BootstrapDialog.TYPE_DEFAULT,
+	        message: function(dialog) {
+	            var $message = $('<div></div>');
+	            var pageToLoad = dialog.getData('pageToLoad');
+	            $message.load(pageToLoad);
+	            return $message;
+	        },
+	        closable: false,
+	        data: {
+	            'pageToLoad': 'check.do?editApprovalUser&id=' + id
+	        },
+	        buttons: [{
+	            label: '更新',
+	            cssClass: 'btn-primary',
+	            action: function(dialogRef){
+	            	updateApprovalUser(dialog);
+	            }
+	        }, {
+	            label: '取消',
+	            cssClass: 'btn-default',
+	            action: function(dialogItself){
+	                dialogItself.close();
+	            }
+	        }]
+	    });
+	    dialog.open();
+
+}
+

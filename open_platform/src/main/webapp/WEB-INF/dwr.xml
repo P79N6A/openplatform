@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN" "http://getahead.org/dwr/dwr30.dtd">
+<dwr>
+    <allow>
+        <!--配置的一个演示类，javascript="Demo" 表示可以在页面中用Demo这个名称指向DwrDemo这个java类，类中的方法可以在前台调用 -->
+        <!-- creater="new"表示每调用一次时,都需要new一个 -->
+        <create creator="new" javascript="DwrMessagePush">
+            <param name="class" value="com.kd.op.util.dwr.DwrMessagePush" />
+        </create>
+        
+        <!-- <create creator="new" javascript="PushMessage2Client">
+            <param name="class" value="com.kd.yxcd.util.dwr.PushMessage2Client" />
+        </create> -->
+        <!-- <create eator="spring" javascript="DwrMessagePush">
+            <param name="beanName" value="dwrMessagePush" />
+        </create> -->
+        
+        <!-- java类库类 -->
+        <!-- <create creator="new" javascript="MyDate">
+            <param name="class" value="java.util.Date" />
+        </create> -->
+
+        <!-- 测试阶段使用，运营阶段不要使用 -->
+        <!-- convert元素用于数据类型转换，即java类和javascript之间相互转换 -->
+        <!-- <convert converter="exception" match="java.lang.Exception" />
+        <convert converter="bean" match="java.lang.StackTraceElement" /> -->
+    </allow>
+</dwr>

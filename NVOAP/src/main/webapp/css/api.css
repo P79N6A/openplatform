@@ -1,0 +1,222 @@
+/*api鍐呭灞曠ず宸︿晶鍒楄〃*/
+.api-content .side-menu{
+	width: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.api-content .menu-content{
+   	min-height: 624px;	
+	background: #fff;
+    box-shadow: 1px 0 4px rgba(0,0,0,.16);
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+    width: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.api-content .menu-select{
+	height: 28px;
+    line-height: 26px;
+    padding-left: 8px;
+    padding-right: 25px;
+    font-size: 12px;
+    border-width: 1px;
+	
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 100%;
+    height: 60px!important;
+    line-height: 60px!important;
+    border: 0!important;
+	
+	font-size: 14px;
+    line-height: 1.28571;
+    display: inline-block;
+    border: 1px solid #f5f5f5;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s ease .1s;
+    border-radius: 3px;
+    min-width: 100px;
+    color: #333;
+    border-color: #ccc;
+    background-color: #fff;
+}
+.api-content .menu-select span{
+	height: 28px;
+    line-height: 26px;
+    padding-left: 8px;
+    padding-right: 25px;
+    font-size: 16px;
+    border-width: 1px;
+    
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 100%;
+    height: 60px!important;
+    line-height: 60px!important;
+    border: 0!important;
+}
+.api-content .menu-select span:before{
+    font-size: 25px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline;
+    position: absolute;
+    left: 20px;
+    color: #666;
+}
+.api-content .menu-select span{
+	font-size: 14px;
+	margin-left: 55px;
+    width: calc(100% - 55px);
+}
+.api-content .menu-select i{
+	right: 6px;
+    top: 50%;
+    margin-top: -30px!important;
+    color: #999;
+    position: absolute;
+}
+.api-content .menu-select i:before{
+	width: 12px;
+    font-size: 12px;
+    line-height: inherit;
+    
+    width: 16px;
+    font-size: 16px;
+    line-height: inherit;
+}
+.api-content .menu-list{
+    border-bottom: 0;
+    padding-bottom: 10px;
+}
+.menu-list ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu-list li a{
+    display: block;
+    line-height: 30px;
+    color: #666;
+    padding-left: 20px;
+    font-size: 14px;
+    transition: all .3s ease 0s;
+    text-decoration: none;
+}
+.menu-list li a:active,.api-content li a:hover,.api-content li a.active{
+    background: #0851fc;
+    color: #fff;
+}
+.menu-list .menu-container{
+	position: relative;
+    padding: 5px 10px 0 5px;
+}
+.menu-list .menu-container .menu-name{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*api鍐呭灞曠ず鍙充晶*/
+.main-content{
+	margin-left: 210px;
+    width: 990px;
+    overflow: hidden;
+    min-height: 700px;
+}
+.main-content .msg-content{
+	padding: 0;
+    color: #4a4a4a;
+    background: #fff;
+    padding-bottom: 5px;
+}
+.main-content .msg-content .msg-tips{
+	background: #fff1e8;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    font-size: 12px;
+    line-height: 23px;
+}
+.main-content .msg-content .msg-title{
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-top: 18px;
+    padding-bottom: 11px;
+    text-decoration: none;
+    display: block;
+    color: #4a4a4a;
+}
+.no-data{
+	height:80px;
+	text-align:center;
+	font-size:12px;
+	color:#aaa;
+}
+.main-content .msg-content p{
+	font-size: 12px;
+    margin: 0px 20px;
+    font-weight: 400;
+}
+.main-content .args-demo{
+    margin: 10px 20px;
+    padding: 15px!important;
+    border-radius: 5px;
+    background: #ccc3!important;
+    font-size: 12px;
+    word-break: break-word;
+    white-space: pre;
+}
+.msg-content table th{
+	padding: 0;
+    background: #f5f5f5;
+    color: #333;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid #f5f5f5;
+}
+.msg-content table td{
+	padding: 0;
+    border: 1px solid #f5f5f5;
+    padding-left:16px;
+}
+/*鑿滃崟涓嬫媺妗嗘牱寮�*/
+.menu-drop-down ul{
+    position: absolute;
+    left: 159.6px;
+    top: 163px;
+    z-index: 1001;
+    
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0;
+    min-width: 150px;
+    font-family: Arial;
+    box-shadow: 2px 2px 20px rgba(0,0,0,.15);
+    width: 185px;
+    background: #000;
+    border: 0;
+    color: #bcbcbc;
+}
+.menu-drop-down ul li{
+	list-style: none;
+    line-height: 30px;
+    padding: 8px 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.menu-drop-down ul li:hover{
+	color:blue;	
+}

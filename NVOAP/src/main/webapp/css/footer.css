@@ -1,0 +1,119 @@
+/*首页结尾*/
+.ending{
+	
+}
+.ending-content{
+    background: #282828;
+    min-width: 1200px;
+}
+.ending-content-main{
+    padding: 50px 0;
+    width: 1190px;
+    margin: 0 auto;
+}
+.ending-content-main:after{
+    display: block;
+    clear: both;
+    height: 0;
+    content: "\0020";
+}
+.ending-content-main .logo{
+	float: left;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: url(../images/logo2.png) no-repeat left center;
+    height: 48px;
+    font-size: 20px;
+    line-height: 32px;
+    padding-left: 60px;
+    background-size: 48px 48px;
+    margin-top: 40px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    opacity: .6;
+}
+.ending-content-main .map{
+	float: left;
+    margin-left: 90px;
+    border-left: solid 1px #454546;
+}
+.ending-content-main .list{
+	float: left;
+    margin-left: 122px;
+    width: 167px;
+    color: #b3b3b3;
+    padding: 0 0 10px 0;
+}
+.ending-content-main ul{
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ending-content-main li{
+	margin-left: 0;
+}
+.ending-content-main li.t{
+	line-height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.ending-content-main .item{
+	line-height: 35px;
+    list-style: disc;
+}
+.ending-content-main .item a{
+	    color: #b3b3b3;
+}
+.ending-footer{
+    clear: both;
+    min-width: 1200px;
+    text-align: center;
+}
+.ending-footer #v0{
+	padding: 0!important;
+    width: auto!important;
+    
+    font: 12px/1.5 Tahoma,Arial,"\5b8b\4f53",sans-serif;
+    color: #999;
+    min-width: 952px;
+    margin: 0 auto;
+    background-color: #3f3f3f!important;
+    height: 30px;
+}
+.ending-footer .footer-container{
+	border-top: 1px solid #454546!important;
+}
+.ending-footer .all-pages{
+	padding: 11px 0 0;
+}
+.ending-footer .all-pages p{
+    padding-left: 3px;
+}
+.ending-footer .all-pages ul{
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ending-footer .all-pages li{
+    display: inline;
+    margin: 0;
+    padding: 0;
+    padding-right: 2px;
+}
+.ending-footer dl{
+	display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.ending-footer dl dd{
+	padding-right: 2px;
+	display: inline;
+    margin: 0;
+    padding: 0;
+}
+.ending-footer dl dd a{
+	color: #999!important;
+	margin-right: 2px;
+}

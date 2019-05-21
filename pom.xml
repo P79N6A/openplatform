@@ -1,0 +1,446 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- Maven Basic Information -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kd</groupId>
+	<artifactId>protocolTrans</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+
+	<!-- Project Development Information -->
+	<developers>
+		<developer>
+			<name>zhangsg</name>
+			<email>zhangshenggao_kd@163.com</email>
+		</developer>
+	</developers>
+	<inceptionYear>2018</inceptionYear>
+
+	<!-- Dependenics Version Properties -->
+	<properties>
+		<servlet.version>3.1.0</servlet.version>
+		<spring.version>4.0.9.RELEASE</spring.version>
+		<edas.version>1.5.4</edas.version>
+		<junit.version>4.12</junit.version>
+		<aspectj.version>1.8.9</aspectj.version>
+		<fastjson-lib.version>1.2.6</fastjson-lib.version>
+		<!--<log4j.version>1.2.16</log4j.version>-->
+	</properties>
+
+
+	<dependencies>
+
+		<!-- Custom API Dependencies -->
+		<!-- log4j -->
+		<!--<dependency>-->
+		<!--<groupId>log4j</groupId>-->
+		<!--<artifactId>log4j</artifactId>-->
+		<!--<version>${log4j.version}</version>-->
+		<!--</dependency>-->
+
+
+		<!-- Spring Dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>4.2.9.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Alibaba EDAS Dependency -->
+		<dependency>
+			<groupId>com.alibaba.edas</groupId>
+			<artifactId>edas-sdk</artifactId>
+			<version>${edas.version}</version>
+		</dependency>
+
+		<!-- Junit Dependency -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+
+		<!-- Javax Servlet Dependency -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.taobao.hsf</groupId>
+			<artifactId>LightApi</artifactId>
+			<version>1.0.5</version>
+			<scope>system</scope>
+			<!--本地jar的路径,相对或者绝对都可以 -->
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/LightApi-1.0.5.jar</systemPath>
+		</dependency>
+
+		<!-- druid连接池  -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.18</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- JSON begin -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.1</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson-lib.version}</version>
+		</dependency>
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.27</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.8.4</version>
+		</dependency>
+		<!--hsf-->
+		<dependency>
+			<groupId>service-com</groupId>
+			<artifactId>service-com</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<!--本地jar的路径,相对或者绝对都可以 -->
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/service-com-1.0.0.jar</systemPath>
+		</dependency>
+
+		<!-- 车联网平台依赖包 -->
+		<dependency>
+			<groupId>sunbox</groupId>
+			<artifactId>ddqc-middle-ground-provide-api</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ddqc-middle-ground-provide-api-1.0.jar</systemPath>
+		</dependency>
+		<!--监控中心jar包-->
+		<dependency>
+			<groupId>exhibition</groupId>
+			<artifactId>exhibition-api</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/exhibition-api-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>target</groupId>
+			<artifactId>target-api</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/target-api-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>operation</groupId>
+			<artifactId>operation-api</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/operation-api-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+		<!-- hsf provider依赖包 -->
+		<!--<dependency>-->
+			<!--<groupId>com.kd</groupId>-->
+			<!--<artifactId>openplatform_hsf_interface</artifactId>-->
+			<!--<version>1.0.0</version>-->
+			<!--<scope>system</scope>-->
+			<!--<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/openplatform_hsf_interface-1.0.0.jar</systemPath>-->
+		<!--</dependency>-->
+
+		<!-- hsf 互联互通依赖包 -->
+		<dependency>
+			<groupId>com.kd</groupId>
+			<artifactId>hlht_openplatform_support_1.0.3</artifactId>
+			<version>1.0.3</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/hlht_openplatform_support_1.0.3.jar</systemPath>
+		</dependency>
+
+		<!-- hsf 天津客服依赖包 -->
+		<dependency>
+			<groupId>com.kd</groupId>
+			<artifactId>center</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/center.jar</systemPath>
+		</dependency>
+		<!-- hsf 用户中心 -->
+		<dependency>
+			<groupId>com.kd</groupId>
+			<artifactId>platform-api</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/platform-api-1.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.kd</groupId>
+			<artifactId>platform-api-1.1-sources</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/platform-api-1.1-sources.jar</systemPath>
+		</dependency>
+
+		<!-- hsf 95598平台依赖包 -->
+		<dependency>
+			<groupId>com.kd</groupId>
+			<artifactId>95598_evp_web-yotouch</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/95598_evp_web-yotouch.jar</systemPath>
+		</dependency>
+		<!--互联互通-->
+		<dependency>
+			<groupId>com.kd</groupId>
+			<artifactId>hlht_openplatform_support_merchManageService_1.0.1</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/hlht_openplatform_support_merchManageService_1.0.1.jar</systemPath>
+		</dependency>
+		<!--天津营销-->
+		<dependency>
+		<groupId>com.kd</groupId>
+		<artifactId>stake-api-20190416</artifactId>
+		<version>1.0.0</version>
+		<scope>system</scope>
+		<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/stake-api-20190416.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.kd</groupId>
+			<artifactId>pylon</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/pylon.jar</systemPath>
+		</dependency>
+		<!--redis-->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>1.6.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+		<!-- 测试依赖包 -->
+		<!--<dependency>-->
+		<!--<groupId>haf_api</groupId>-->
+		<!--<artifactId>haf_api</artifactId>-->
+		<!--<version>1.0.0</version>-->
+		<!--</dependency>-->
+
+		<!-- axis 1.4 jar start -->
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+			<version>0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis-jaxrpc</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis-saaj</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>wsdl4j</groupId>-->
+			<!--<artifactId>wsdl4j</artifactId>-->
+			<!--<version>1.6.3</version>-->
+		<!--</dependency>-->
+		<!-- axis 1.4 jar end -->
+
+		<!--cxf-->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.neethi</groupId>-->
+			<!--<artifactId>neethi</artifactId>-->
+			<!--<version>3.0.3</version>-->
+		<!--</dependency>-->
+
+		<!-- 导入webservice依赖 -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-extension-providers</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.3.7</version>
+		</dependency>
+
+
+		<!--mq-->
+		<dependency>
+			<groupId>com.aliyun.openservices</groupId>
+			<artifactId>ons-client</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<!--mq end-->
+		<!--dom4j-->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<!--dom4j end-->
+	</dependencies>
+
+	<!-- Build Configuration -->
+	<build>
+		<finalName>protocolTrans</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<compilerVersion>1.8</compilerVersion>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.0</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.6</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.9</version>
+			</plugin>
+		</plugins>
+	</build>
+	<organization>
+		<name>科东电力控制系统有限责任公司</name>
+	</organization>
+</project>

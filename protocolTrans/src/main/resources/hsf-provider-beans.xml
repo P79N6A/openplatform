@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:hsf="http://www.taobao.com/hsf" 
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.taobao.com/hsf
+        http://www.taobao.com/hsf/hsf.xsd"
+	default-autowire="byName">
+	
+	<!--  -->
+	<bean id="hsfService" class="com.kd.openplatform.hsf.provider.OpenplatformAPIImpl" />
+	<!--<bean id="mqHsfService" class="com.kd.openplatform.mq.MQ" />-->
+	<!-- 提供一个服务示例 -->
+	<!--<hsf:provider id="hsfdataServer"-->
+		<!--interface="com.kd.openplatform.activeAPI.OpenplatformAPI"-->
+		<!--ref="hsfService"-->
+		<!--version="12.2.2"-->
+		<!--group="openplatformHSF"-->
+		<!--clientTimeout="500000"-->
+	<!--&gt;-->
+	<!--</hsf:provider>-->
+
+
+	<!-- 提供一个服务示例 -->
+	<hsf:provider id="hsfdataServer"
+				  interface="com.kd.openplatform.activeAPI.OpenplatformAPI"
+				  ref="hsfService"
+				  version="12.2.2"
+				  group="openplatformHSF"
+				  clientTimeout="500000"
+	>
+	</hsf:provider>
+
+	<!--<hsf:provider id="hsfMQServer"-->
+				  <!--interface="com.kd.openplatform.activeAPI.OpenplatformMqApi"-->
+				  <!--ref="mqHsfService"-->
+				  <!--version="1.0.0"-->
+				  <!--group="openplatformHSF"-->
+				  <!--clientTimeout="500000"-->
+	<!--&gt;-->
+	<!--</hsf:provider>-->
+</beans>

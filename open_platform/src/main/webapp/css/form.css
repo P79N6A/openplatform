@@ -1,0 +1,94 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.no-padding{
+    padding: 0!important;
+}
+.search-div{
+	background-color: #fff;
+    color: inherit;
+    border-color: #e7eaec;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+.search-div .near-padding-right{
+	padding-right:5px;
+}
+.search-div button{
+	margin-bottom: 5px;
+}
+.modal-header{
+	padding-bottom:5px;
+}
+.modal-body{
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.table{
+	padding-bottom:5px;	
+}
+.form-group{
+	margin-bottom:5px;
+}
+.glyphicon{
+	top:2px;
+}
+.table-show-btn{
+	position:relative;
+	top:1px;
+}
+.table-striped{
+	table-layout:fixed;
+}
+.show-info .value-info{
+    width: 100%;
+    max-width: 65%;
+    min-height: 17px;
+    display: inline-block;
+    border-bottom: 1px solid #DDD !important;
+    font-size: 14px;
+    text-align: center;
+    top:3px;
+}
+.show-info textarea[readonly]{
+    box-shadow: none;
+    display: block;
+    width: 80%;
+    height: auto;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: inherit;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.show-info .form-group{
+	margin-bottom:15px;
+}
+.searchForm{
+	margin-top:15px;
+}
+.searchForm .form-horizontal{
+	margin-bottom:15px;
+}
+.read-only select[disabled]{
+	cursor:default;
+}
+.smart-prev{
+    background-color:#99CCFF;
+}
+.smart-next{
+    float:right;
+    background-color:#00CAAB;
+}

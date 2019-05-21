@@ -1,0 +1,4 @@
+[  
+	    	{    "id": 1,    "pid": 0,    "name": "data",    "type": "UserInfo","describe":"用户信息"  },  
+	    	{    "id": 2,    "pid": 0,    "name": "errorCode",    "type": "String","describe":"错误码" },
+	    	{    "id": 3,    "pid": 1,    "name": "loginId",    "type": "String","describe":"登录名"  }]

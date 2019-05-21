@@ -1,0 +1,25 @@
+@media (min-width: 1200px){
+    .resolve-content .resolve-list li{
+        width:366px;
+    }
+    .hangye li{
+        width:100px;
+    }
+}
+
+@media (min-width: 992px){
+    .resolve-content .resolve-list li{
+        width:400px;
+    }
+}
+
+@media (min-width: 768px){
+    .resolve-content .resolve-list li{
+        width:500px;
+    }
+}
+@media (min-width: 768px){
+    .resolve-content .resolve-list li{
+        width:500px;
+    }
+}

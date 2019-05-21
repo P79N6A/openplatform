@@ -1,0 +1,34 @@
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8081
+spring:
+  mvc:
+    view:
+      prefix: /webpage/
+      suffix: .jsp
+      
+  thymeleaf:
+    cache: false
+  freemarker:
+    cache: false
+  groovy:
+    template:
+      cache: false
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://192.168.20.101:13306/open_platform_inner
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations: classpath:/mapping/*.xml
+  type-aliases-package: com.kd.marketplace.model
+#分页插件
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
