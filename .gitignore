@@ -23,10 +23,10 @@
 hs_err_pid*
 
 # 添加自定义忽略文件及文件夹
-/.idea/
-/.svn/
-/target/
-/out/
-/.maven/
-/.settings/
+*/.idea/
+*/.svn/
+*/target/
+*/out/
+*/.maven/
+*/.settings/
 *.iml
